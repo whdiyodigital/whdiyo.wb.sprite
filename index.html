@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Azure Media Thumbnails Sprite Tip</title>
+        <link type="text/css" rel="stylesheet" href="//amp.azure.net/libs/amp/2.1.7/skins/amp-default/azuremediaplayer.min.css" />
+        <script type="text/javascript" src="//amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="amp-spriteTip.js"></script>
+        <script type="text/javascript" src="vtt.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var mediaPlayer = amp("mediaPlayer", {
+                    "plugins": {
+                        "spriteTip": {
+                            vttUrl: "https://drmencodingtaskthumbnail.blob.core.windows.net/sprite-thebigbangtheory/The%20Big%20Bang%20Theory%20I-%20Episode%200_000001.vtt",
+                            spriteImgUrl: "https://drmencodingtaskthumbnail.blob.core.windows.net/sprite-thebigbangtheory/The%20Big%20Bang%20Theory%20I-%20Episode%200_000001.jpg"
+                        }
+                    }
+                });
+                mediaPlayer.src(
+                    [{
+                        src: "https://drmencodingmediaserver.streaming.mediaservices.windows.net/a797ff7d-2fe1-4250-be03-f622e2029840/The%20Big%20Bang%20Theory%20I-%20Episode%200.ism/manifest(format=m3u8-aapl)",
+                    }]
+                );
+            })
+        </script>
+    </head>
+    <body>
+        <video id="mediaPlayer" class="azuremediaplayer amp-default-skin" autoplay controls style="display:block;margin:0 auto" />
+    </body>
+</html>
